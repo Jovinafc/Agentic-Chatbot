@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 st.set_page_config(page_title="Langgraph Agent UI", layout = "wide")
 st.title('AI Chatbot Agents')
@@ -21,7 +22,9 @@ allow_web_search = st.checkbox('Allow Web Search')
 
 user_query = st.text_area("Enter your query:  ", height=150, placeholder="Ask Anything!")
 
-API_URL = 'http://127.0.0.1:9999/chat'
+# API_URL = 'http://127.0.0.1:9999/chat'
+# API_URL = 'https://agentic-chatbot-backend-3l4l.onrender.com/chat'
+API_URL = f'{os.environ.get('API_URL')}/chat'
 
 if st.button("Ask Agent!"):
     #Get Response From Backend
