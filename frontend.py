@@ -24,7 +24,8 @@ user_query = st.text_area("Enter your query:  ", height=150, placeholder="Ask An
 
 # API_URL = 'http://127.0.0.1:9999/chat'
 # API_URL = 'https://agentic-chatbot-backend-3l4l.onrender.com/chat'
-API_URL = f'{os.environ.get('API_URL')}/chat'
+API_URL = f"{os.environ.get('API_URL')}/chat"
+print("API_URL", API_URL)
 
 if st.button("Ask Agent!"):
     #Get Response From Backend
